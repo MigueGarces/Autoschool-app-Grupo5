@@ -18,7 +18,12 @@ class VehicleViewSet(viewsets.ModelViewSet):
     pass
 
 class CourseViewSet(viewsets.ModelViewSet):
-    pass
+    queryset = Course.objects.all()
+    serializer_class = CourseSerializer
+    filterset_fields = ['level', 'is_active']
+    search_fields = ['name', 'description']
+    ordering_fields = ['price', 'duration_hours', 'created_at']
+
 class EnrollmentViewSet(viewsets.ModelViewSet):
     pass
 

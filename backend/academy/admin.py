@@ -19,7 +19,8 @@ class VehicleAdmin(admin.ModelAdmin):
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('name', 'duration_hours', 'price', 'created_at')
+    list_display = ('name', 'level', 'duration_hours', 'price', 'is_active', 'created_at')
+    list_filter = ('level', 'is_active')
     search_fields = ('name',)
 
 @admin.register(Enrollment)
